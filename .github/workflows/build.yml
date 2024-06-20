@@ -36,9 +36,10 @@ jobs:
         name: vega-windows
         path: bin
     - name: Upload to Release Action
-      uses: Shopify/upload-to-release@v2.0.0
+      uses: softprops/action-gh-release@v2
       with:
-          name: vega-windows
-          path: bin
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          
+          body: automatic release
+          prerelease: true
+          files: bin/
+          name: auto release
+          token: ${{ github.token }}
