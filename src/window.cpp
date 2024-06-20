@@ -1,4 +1,4 @@
-#include <vega/window.hpp>
+#include "vega/window.hpp"
 
 namespace vega {
     VEGAWindow::VEGAWindow(int32_t width, int32_t height, const char* title, const char* iconPath, VEGAColor backgroundColor, bool fullscreen, bool resizable, bool vsync)

@@ -1,4 +1,4 @@
-#include <vega/file.hpp>
+#include "vega/file.hpp"
 
 namespace vega {
     std::string VEGAReadFile(const char* file_path) {

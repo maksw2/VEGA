@@ -1,4 +1,4 @@
-#include <vega/camera.hpp>
+#include "vega/camera.hpp"
 
 namespace vega {
     VEGACamera::VEGACamera(VEGAWindow* window, float fov, float near, float far, float sensitivity, float normalSpeed, float sprintSpeed, glm::vec3 position)

@@ -1,4 +1,4 @@
-#include <vega/vertexBuffer.hpp>
+#include "vega/vertexBuffer.hpp"
 
 namespace vega {
     VEGAVertexBuffer::VEGAVertexBuffer(std::vector <VEGAVertex>& vertices) {

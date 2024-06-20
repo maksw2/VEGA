@@ -1,7 +1,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsequence-point"
 
-#include <vega/model.hpp>
+#include "vega/model.hpp"
 
 namespace vega {
     VEGAModel::VEGAModel(const char* filePath) : filePath(filePath) {

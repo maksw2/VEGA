@@ -1,4 +1,4 @@
-#include <vega/indexBuffer.hpp>
+#include "vega/indexBuffer.hpp"
 
 namespace vega {
     VEGAIndexBuffer::VEGAIndexBuffer(std::vector <unsigned int>& indices) : count(indices.size()) {

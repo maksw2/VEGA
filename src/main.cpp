@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-#include <vega/vega.hpp>
+#include "vega/vega.hpp"
 
 static float ambient = 0.0f;
 static vega::VEGAShader* shader;

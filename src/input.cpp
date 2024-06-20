@@ -1,4 +1,4 @@
-#include <vega/input.hpp>
+#include "vega/input.hpp"
 
 namespace vega {
     VEGAInput::VEGAInput(GLFWwindow* window) : window(window) {

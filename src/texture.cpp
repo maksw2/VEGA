@@ -1,4 +1,4 @@
-#include <vega/texture.hpp>
+#include "vega/texture.hpp"
 
 namespace vega {
     VEGATexture::VEGATexture(const char* file, const char* type, unsigned int unit) : unit(unit), type(type) {

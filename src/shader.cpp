@@ -1,4 +1,4 @@
-#include <vega/shader.hpp>
+#include "vega/shader.hpp"
 
 namespace vega {
     VEGAShader::VEGAShader(std::string vertexSourceString, std::string fragmentSourceString) {

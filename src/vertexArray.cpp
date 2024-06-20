@@ -1,4 +1,4 @@
-#include <vega/vertexArray.hpp>
+#include "vega/vertexArray.hpp"
 
 namespace vega {
     VEGAVertexArray::VEGAVertexArray() {

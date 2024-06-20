@@ -1,4 +1,4 @@
-#include <vega/mesh.hpp>
+#include "vega/mesh.hpp"
 
 namespace vega {
     VEGAMesh::VEGAMesh(std::vector <VEGAVertex>& vertices, std::vector <unsigned int>& indices, std::vector <VEGATexture*>& textures)
