@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4.1.7
     - name: make
-      run: make
+      run: build_norun.sh
     - uses: actions/upload-artifact@v4.3.3
       with:
         name: vega-linux
@@ -28,7 +28,7 @@ jobs:
     steps:
     - uses: actions/checkout@4.1.7
     - name: make
-      run: make
+      run: build_norun.cmd
     - uses: actions/upload-artifact@v4.3.3
       with:
         name: vega-windows
