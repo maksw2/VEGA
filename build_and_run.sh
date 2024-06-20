@@ -1,2 +1,2 @@
 #!/bin/bash
-make lnx_buildrun
+make -f buildrun.lnx

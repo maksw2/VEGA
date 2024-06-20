@@ -1,1 +1,1 @@
-make win_buildonly
+make -f buildonly.win

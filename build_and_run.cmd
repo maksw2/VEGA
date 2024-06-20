@@ -1,1 +1,1 @@
-make win_buildrun
+make -f buildrun.win
