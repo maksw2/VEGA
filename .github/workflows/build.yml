@@ -13,9 +13,9 @@ jobs:
     #steps:
     #- uses: actions/checkout@v4
     #- name: perms fix
-    #  run: chmod +x build_norun.sh
+    #  run: chmod +x build_only.sh
     #- name: make
-    #  run: ./build_norun.sh
+    #  run: ./build_only.sh
     #- uses: actions/upload-artifact@v4.3.3
     #  with:
     #    name: vega-linux
@@ -54,3 +54,5 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: a new release dropped!
+        username: vegabot
