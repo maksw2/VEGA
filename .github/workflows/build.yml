@@ -35,11 +35,13 @@ jobs:
       with:
         name: vega-windows
         path: bin
+    - name: get artifact
+      uses: actions/download-artifact@v4
     - name: Upload to Release Action
       uses: softprops/action-gh-release@v2
       with:
           body: automatic release by github actions
           prerelease: true
-          files: ${{ github.workspace }}/bin/*.zip
+          files: ${{ github.workspace }}/*.zip
           name: autobuild
           tag_name: autobuild
