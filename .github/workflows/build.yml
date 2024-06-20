@@ -35,19 +35,17 @@ jobs:
       with:
         name: vega-windows
         path: bin
-    - name: get artifact
-      uses: actions/download-artifact@v4
+    - name: compress bin
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: 'vega-windows.zip'
+        path: bin/
     - name: Upload to Release Action
       uses: softprops/action-gh-release@v2
       with:
           body: automatic release by github actions
           prerelease: true
-          files: ${{ github.workspace }}/*.zip
+          files: ${{ github.workspace }}/vega-windows.zip
           name: autobuild
           tag_name: autobuild
-    - name: Discord notification
-      env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      uses: Ilshidur/action-discord@master
-      with:
-        args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
