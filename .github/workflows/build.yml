@@ -35,14 +35,12 @@ jobs:
       with:
         name: vega-windows
         path: bin
+    - name: create 
     - name: Upload to Release Action
       uses: softprops/action-gh-release@v2
       with:
           body: automatic release by github actions
           prerelease: true
-          files: bin/
-          name: auto release
-          tag_name: |
-            auto
-            prerelease
-            actions
+          files: ${{ github.workspace }}/bin/*.zip
+          name: autobuild
+          tag_name: autobuild
