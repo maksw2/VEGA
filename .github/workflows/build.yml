@@ -5,26 +5,27 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-  build-linux:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: perms fix
-      run: chmod +x build_norun.sh
-    - name: make
-      run: ./build_norun.sh
-    - uses: actions/upload-artifact@v4.3.3
-      with:
-        name: vega-linux
-        path: bin
-    - name: Upload to Release Action
-      uses: Shopify/upload-to-release@v2.0.0
-      with:
-          name: vega-linux
-          path: bin
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+  #build-linux:
+    #runs-on: ubuntu-latest
+    #steps:
+    #- uses: actions/checkout@v4
+    #- name: perms fix
+    #  run: chmod +x build_norun.sh
+    #- name: make
+    #  run: ./build_norun.sh
+    #- uses: actions/upload-artifact@v4.3.3
+    #  with:
+    #    name: vega-linux
+    #    path: bin
+    #- name: Upload to Release Action
+    #  uses: Shopify/upload-to-release@v2.0.0
+    #  with:
+    #      name: vega-linux
+    #      path: bin
+    #      repo-token: ${{ secrets.GITHUB_TOKEN }}
   build-windows:
     runs-on: windows-latest
     steps:
@@ -44,8 +45,12 @@ jobs:
     - name: Upload to Release Action
       uses: softprops/action-gh-release@v2
       with:
-          body: automatic release by github actions
-          prerelease: true
-          files: ${{ github.workspace }}/vega-windows.zip
-          name: autobuild
-          tag_name: autobuild
+        body: automatic release by github actions
+        prerelease: true
+        files: ${{ github.workspace }}/vega-windows.zip
+        name: autobuild
+        tag_name: autobuild
+    - name: notify discord
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ DISCORD_WEBHOOK }}
