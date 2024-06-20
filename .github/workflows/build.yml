@@ -38,8 +38,11 @@ jobs:
     - name: Upload to Release Action
       uses: softprops/action-gh-release@v2
       with:
-          body: automatic release
+          body: automatic release by github actions
           prerelease: true
           files: bin/
           name: auto release
-          token: ${{ github.token }}
+          tag_name: |
+            auto
+            prerelease
+            actions
