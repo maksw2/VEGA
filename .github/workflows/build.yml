@@ -1,0 +1,42 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.7
+    - name: make
+      run: make
+    - uses: actions/upload-artifact@v4.3.3
+      with:
+        name: vega-linux
+        path: bin
+    - name: Upload to Release Action
+      uses: Shopify/upload-to-release@v2.0.0
+      with:
+          name: vega-linux
+          path: bin
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@4.1.7
+    - name: make
+      run: make
+    - uses: actions/upload-artifact@v4.3.3
+      with:
+        name: vega-windows
+        path: bin
+    - name: Upload to Release Action
+      uses: Shopify/upload-to-release@v2.0.0
+      with:
+          name: vega-windows
+          path: bin
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
