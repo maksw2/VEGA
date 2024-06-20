@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: make
-      run: ./build_norun.cmd
+      run: ./build_only.cmd
     - uses: actions/upload-artifact@v4.3.3
       with:
         name: vega-windows
