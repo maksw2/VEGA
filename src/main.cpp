@@ -65,6 +65,14 @@ int main(int argc, const char* argv[]) {
             model.transform.rotate(1.0f, glm::vec3(0.0f, 1.0f, 0.0f));
         }
 
+		if (window.input->getKey(VEGA_KEY_ESCAPE)) {
+			delete shader;
+			shader->destroy();
+			model.destroy();
+			window.destroy();
+			return 0;
+		}
+		
         model.render(shader, &camera);
 
         window.checkErrors();
