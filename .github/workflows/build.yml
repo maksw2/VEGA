@@ -1,4 +1,4 @@
-name: build vega
+name: Build VEGA
 concurrency: ${{ github.workflow }}_${{ github.ref }}
 on:
   push:
@@ -8,35 +8,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  #build-linux:
-    #runs-on: ubuntu-latest
-    #steps:
-    #- uses: actions/checkout@v4
-    #- name: perms fix
-    #  run: chmod +x build_only.sh
-    #- name: make
-    #  run: ./build_only.sh
-    #- uses: actions/upload-artifact@v4.3.3
-    #  with:
-    #    name: vega-linux
-    #    path: bin
-    #- name: Upload to Release Action
-    #  uses: Shopify/upload-to-release@v2.0.0
-    #  with:
-    #      name: vega-linux
-    #      path: bin
-    #      repo-token: ${{ secrets.GITHUB_TOKEN }}
   build-windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
-    - name: make
-      run: ./build_only.cmd
+    - name: Build project
+      run: ./build.cmd
     - uses: actions/upload-artifact@v4.3.3
       with:
         name: vega-windows
         path: bin
-    - name: compress bin
+    - name: Compress the binary for releases
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
@@ -50,11 +32,11 @@ jobs:
         files: ${{ github.workspace }}/vega-windows.zip
         name: autobuild
         tag_name: autobuild
-    - name: notify discord
+    - name: Discord WebHook Notify
       uses: tsickert/discord-webhook@v6.0.0
       with:
         webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-        username: "vegabot"
+        username: "VEGAbot"
         avatar-url: "https://maksw.pl/images/ja1.webp"
         embed-title: "A new release dropped!"
         embed-description: "[Get it here](https://github.com/maksw2/VEGA/releases)"
