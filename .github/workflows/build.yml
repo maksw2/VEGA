@@ -1,5 +1,5 @@
 name: build vega
-
+concurrency: ${{ github.workflow }}_${{ github.ref }}
 on:
   push:
     branches: [ "main" ]
