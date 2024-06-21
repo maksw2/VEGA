@@ -51,7 +51,7 @@ jobs:
         name: autobuild
         tag_name: autobuild
     - name: notify discord
-      uses: tsickert/discord-webhook@v6
+      uses: tsickert/discord-webhook@v6.0.0
       with:
         webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
         username: "vegabot"
