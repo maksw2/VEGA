@@ -30,7 +30,7 @@ int main(int argc, const char* argv[]) {
     );
 
     vega::VEGACamera camera(&window, 45.0f, 0.1f, 1000.0f, 200.0f, 2.0f, 5.0f, glm::vec3(0.0f, 0.0f, -2.0f));
-    vega::VEGAModel model("res/models/heavy/heavy.gltf");
+    vega::VEGAModel model("res/models/crow/heavy.gltf");
     
     shader->use();
     glUniform4fv(shader->getUniformLocation("lightColor"), 1, (float*) glm::value_ptr(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f)));
