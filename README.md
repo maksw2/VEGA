@@ -1,5 +1,6 @@
 # VEGA Engine
 A simple 3D game engine written in C++ using OpenGL.
+
 ![Build badge](https://github.com/maksw2/VEGA/actions/workflows/build.yml/badge.svg)
 
 # Examples
